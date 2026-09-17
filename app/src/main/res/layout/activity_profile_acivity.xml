@@ -50,10 +50,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="24dp">
+            android:layout_height="wrap_content">
 
-            <!-- Gambar Latar Atas -->
             <ImageView
                 android:id="@+id/ivLatarBelakang"
                 android:layout_width="match_parent"
@@ -64,168 +62,182 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <!-- Foto Profil (Tumpuk tepat di tengah batas bawah gambar gunung) -->
+            <!-- Foto Profil Lingkaran -->
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivProfilPhoto"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-
-                android:src="@drawable/dummy_avatar"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:src="@drawable/pfp"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                app:strokeColor="@color/white"
+                app:strokeWidth="3dp"
                 app:layout_constraintBottom_toBottomOf="@id/ivLatarBelakang"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ivLatarBelakang"
+                app:layout_constraintTop_toBottomOf="@id/ivLatarBelakang"
                 tools:src="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tvDetailName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="[Nama Pengguna]"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivLatarBelakang" />
-
-            <TextView
-                android:id="@+id/tvDetailJabatan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="[Mobile Developer]"
-                android:textColor="#777777"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
-
-            <View
-                android:id="@+id/viewSeparator"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="24dp"
-                android:background="#EEEEEE"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailJabatan" />
-
-            <TextView
-                android:id="@+id/tvDetailEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:drawablePadding="12dp"
-                android:text="[mahisa@example.com]"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_email"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewSeparator" />
-
-            <TextView
-                android:id="@+id/tvDetailPhone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="12dp"
-                android:text="[081234567890]"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_phone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailEmail" />
-
-            <TextView
-                android:id="@+id/tvDetailWeb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawablePadding="12dp"
-                android:text="[https://mahisa.com]"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_globe"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailPhone" />
-
-            <View
-                android:id="@+id/viewSeparator2"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="16dp"
-                android:background="#EEEEEE"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailWeb" />
-
-            <TextView
-                android:id="@+id/tvDetailBio"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Senang membangun aplikasi mobile yang bermanfaat dan mudah digunakan."
-                android:textAlignment="center"
-                android:textColor="#555555"
-                android:textSize="12sp"
-                app:layout_constraintTop_toBottomOf="@id/viewSeparator2" />
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="24dp"
+                app:layout_constraintTop_toBottomOf="@id/ivProfilPhoto">
 
-            <LinearLayout
-                android:id="@+id/layoutActionButtons"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/tvDetailBio">
+                <TextView
+                    android:id="@+id/tvDetailName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="[Nama Pengguna]"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonKunjungiWebsite"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#0D53FC"
-                    android:text="Kunjungi Website"
-                    android:textColor="@color/white"
+                <TextView
+                    android:id="@+id/tvDetailJabatan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Developer"
+                    android:textColor="#777777"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailName" />
+
+                <View
+                    android:id="@+id/viewSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailJabatan" />
+
+                <TextView
+                    android:id="@+id/tvDetailEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="12dp"
+                    android:text="[hana@example.com]"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewSeparator" />
+
+                <TextView
+                    android:id="@+id/tvDetailPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="12dp"
+                    android:text="[081234567890]"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_phone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailEmail" />
+
+                <TextView
+                    android:id="@+id/tvDetailWeb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="12dp"
+                    android:text="[https://hana.com]"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/ic_globe"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailPhone" />
+
+                <View
+                    android:id="@+id/viewSeparator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#EEEEEE"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailWeb" />
+
+                <TextView
+                    android:id="@+id/tvDetailBio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Senang membangun aplikasi mobile yang bermanfaat dan mudah digunakan."
+                    android:textAlignment="center"
+                    android:textColor="#555555"
                     android:textSize="12sp"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_globe"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="@color/white" />
+                    app:layout_constraintTop_toBottomOf="@id/viewSeparator2" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonHubungiSaya"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:backgroundTint="#0BCE73"
-                    android:text="Hubungi Saya"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_phone"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="@color/white" />
+                <LinearLayout
+                    android:id="@+id/layoutActionButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailBio">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/buttonBagikanKartu"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="#7047FF"
-                    android:text="Bagikan Kartu"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_share"
-                    app:iconGravity="textStart"
-                    app:iconPadding="0dp"
-                    app:iconTint="@color/white" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonKunjungiWebsite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#0D53FC"
+                        android:text="Kunjungi Website"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_globe"
+                        app:iconGravity="top"
+                        app:iconPadding="0dp"
+                        app:iconTint="@color/white" />
 
-            </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonHubungiSaya"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#0BCE73"
+                        android:text="Hubungi Saya"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_phone"
+                        app:iconGravity="top"
+                        app:iconPadding="0dp"
+                        app:iconTint="@color/white" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonBagikanKartu"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="#7047FF"
+                        android:text="Bagikan Kartu"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_share"
+                        app:iconGravity="top"
+                        app:iconPadding="0dp"
+                        app:iconTint="@color/white" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

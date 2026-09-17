@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             if (name.isEmpty() || email.isEmpty() || phone.isEmpty() || portfolio.isEmpty()) {
                 Toast.makeText(this, "Harap isi semua data!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-            }
+            } 
 
             val intent = Intent(this, ProfileAcivity::class.java).apply {
                 putExtra("EXTRA_NAME", name)
