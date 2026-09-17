@@ -145,7 +145,7 @@
                 android:text="[https://mahisa.com]"
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                app:drawableStartCompat="@drawable/ic_language"
+                app:drawableStartCompat="@drawable/ic_globe"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDetailPhone" />
@@ -189,7 +189,7 @@
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_language"
+                    app:icon="@drawable/ic_globe"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp"
                     app:iconTint="@color/white" />
